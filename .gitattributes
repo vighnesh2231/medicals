@@ -1,0 +1,2 @@
+bigfile.mp4 filter=lfs diff=lfs merge=lfs -text
+galaxy[[:space:]]medicals.7z filter=lfs diff=lfs merge=lfs -text
