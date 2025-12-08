@@ -44,9 +44,29 @@ export default function MedicinesHomePage() {
     { name: "Dr. Dips Choudhari", specialty: "Pharmaceutical Consultant", image: "p3.jpg" },
   ];
 
+  const illnessProducts = [
+    { name: "Fever Tablets", image: "fever.jpg" },
+    { name: "Cough Syrup", image: "cough.jpg" },
+    { name: "Cold Tablets", image: "coldtabs.jpg" },
+    { name: "Pain Tablets", image: "pain2.jpg" },
+    { name: "Allergy Syrup", image: "allergysyrup.jpg" },
+    { name: "Acidity Tablets", image: "acidity.jpg" },
+    { name: "Stomach Pain Syrup", image: "stomachsyrup.jpg" },
+    { name: "Vomiting Tablets", image: "vomit.jpg" },
+    { name: "Throat Infection Syrup", image: "throat.jpg" },
+    { name: "Headache Tablets", image: "headache.jpg" },
+    { name: "Migraine Tablets", image: "migraine.jpg" },
+    { name: "Loose Motion Syrup", image: "loosemotion.jpg" },
+    { name: "Skin Infection Cream", image: "skincream.jpg" },
+    { name: "Ear Pain Drops", image: "eardrops.jpg" },
+    { name: "Eye Infection Drops", image: "eyedrops.jpg" },
+    { name: "Weakness Syrup", image: "weakness.jpg" },
+    { name: "Immunity Booster", image: "immunity.jpg" },
+    { name: "Body Ache Oil", image: "bodyache.jpg" },
+  ];
+
   return (
     <>
-      {/* NAVBAR */}
       <nav className="w-full bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-[1200px] mx-auto px-4 py-3 flex items-center justify-between">
           <a href="/" className="text-xl font-bold text-blue-700">GALAXY MEDS</a>
@@ -60,23 +80,21 @@ export default function MedicinesHomePage() {
       </nav>
 
       <main className="max-w-[1200px] mx-auto p-4 space-y-16">
-        {/* Hero Slider */}
         <div className="relative w-full h-[380px] rounded-2xl overflow-hidden shadow-lg">
           <img
             src={heroSlides[index].image}
             alt="Hero Slide"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50 flex flex-col justify-center p-8 text-white max-w-lg">
+          <div className="absolute inset-0  flex flex-col justify-center p-8 text-gray-600 max-w-lg">
             <h2 className="text-3xl font-bold mb-3">{heroSlides[index].title}</h2>
             <p className="text-base mb-6">{heroSlides[index].text}</p>
-            <button className="bg-blue-700 px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-800 transition">
+            <button className="bg-blue-700 px-5 py-2 rounded-full text-sm font-bold hover:bg-blue-800 transition w-fit text-white">
               Shop Now
             </button>
           </div>
         </div>
 
-        {/* Categories */}
         <section>
           <h2 className="text-2xl font-bold text-slate-900 mb-6">Product Categories</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
@@ -98,13 +116,53 @@ export default function MedicinesHomePage() {
           </div>
         </section>
 
-        {/* Pharmacists */}
+        <section>
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">Common Illness Medicines</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+            {illnessProducts.map((item, i) => (
+              <div
+                key={i}
+                className="bg-white shadow rounded-xl p-3 hover:shadow-lg transition text-center"
+              >
+                <div className="w-full h-32 rounded-lg overflow-hidden mb-3">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="text-sm font-semibold text-slate-900">{item.name}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-blue-50 p-8 rounded-xl flex flex-col md:flex-row items-center gap-6">
+          <div className="flex-1">
+            <h2 className="text-3xl font-bold text-slate-900 mb-3">Order Your Medicines</h2>
+            <p className="text-slate-700 mb-6 max-w-md">
+              Place an order for the medicines you need. We offer both home delivery and in-store pickup.
+            </p>
+            <a
+              href="/order"
+              className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 text-sm font-bold"
+            >
+              Start Now
+            </a>
+          </div>
+          <img
+            src="/medicines.jpg"
+            alt="Order Medicines"
+            className="max-w-full rounded-lg h-[260px] object-cover"
+          />
+        </section>
+
         <section>
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold text-slate-900">Our Pharmacists</h2>
             <a
               href="/pharmacists"
-              className="text-white bg-blue-600 px-4 py-2 rounded text-sm hover:bg-blue-700"
+              className="text-white font-bold bg-blue-600 px-4 py-2 rounded text-sm hover:bg-blue-700"
             >
               View All
             </a>
@@ -124,32 +182,10 @@ export default function MedicinesHomePage() {
             ))}
           </div>
         </section>
-
-        {/* Call to Action */}
-        <section className="bg-blue-50 p-8 rounded-xl flex flex-col md:flex-row items-center gap-6">
-          <div className="flex-1">
-            <h2 className="text-3xl font-bold text-slate-900 mb-3">Order Your Medicines</h2>
-            <p className="text-slate-700 mb-6 max-w-md">
-              Place an order for the medicines you need. We offer both home delivery and in-store pickup.
-            </p>
-            <a
-              href="/order"
-              className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 text-sm font-semibold"
-            >
-              Start Now
-            </a>
-          </div>
-          <img
-            src="/medicines.jpg"
-            alt="Order Medicines"
-            className="max-w-full rounded-lg h-[260px] object-cover"
-          />
-        </section>
       </main>
 
-      {/* Footer */}
       <footer className="bg-slate-900 text-slate-200 mt-20 py-10">
-        <div className="max-w-[1200px] mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-10">
+        <div className="max-w-[1200px] mx-auto px-4 grid grid-cols-1 sm:grid-cols-4 gap-10">
           <div>
             <h3 className="text-lg font-bold mb-3">Galaxy Medicals</h3>
             <p className="text-sm">Your trusted source for medicines and wellness products.</p>
@@ -167,10 +203,15 @@ export default function MedicinesHomePage() {
 
           <div>
             <h4 className="font-semibold mb-3">Contact</h4>
-            <p className="text-sm">Email: support@galaxymedicals.com</p>
+            <p className="text-sm">Email: galaxymedicals@gmail.com</p>
             <p className="text-sm">Phone: +1 555 234 5678</p>
           </div>
+          <div>
+            <h4 className="font-semibold mb-3">Address</h4>
+            <p className="text-sm"> Don Line, Nalasopara East,<br /> Nala Sopara,<br /> Maharashtra 401209</p>
+          </div>
         </div>
+
         <p className="text-center text-xs text-slate-400 mt-10">© {new Date().getFullYear()} Galaxy Medicals. All rights reserved.</p>
       </footer>
     </>
