@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './index.css'
 import MedicinesHomePage from './MedicinesHomePage.jsx'
-import OrderPage from './Shop_now/page.jsx'
+import OrderPage from './ShopNow/page.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

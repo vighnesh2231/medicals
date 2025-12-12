@@ -9,7 +9,7 @@ export default function Navbar() {
           <a href="/" className="hover:text-blue-700">Home</a>
           <a href="/products" className="hover:text-blue-700">Products</a>
           <a href="/pharmacists" className="hover:text-blue-700">Pharmacists</a>
-          <a href="/order" className="hover:text-blue-700">Order</a>
+          <a href="/ShopNow" className="hover:text-blue-700">Order</a>
         </div>
       </div>
     </nav>
