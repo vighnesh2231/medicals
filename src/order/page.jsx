@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "../Navbar/page";
 import Footer from "../Footer/page";
 
-export default function ShopNow() {
+export default function Order() {
   const [form, setForm] = useState({
     name: "",
     phone: "",
