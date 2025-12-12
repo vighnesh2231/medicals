@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Navbar from "../navbar/page";
-import Footer from "../footer/page";
+import Navbar from "../Navbar/page";
+import Footer from "../Footer/page";
 
 export default function ShopNow() {
   const [form, setForm] = useState({
